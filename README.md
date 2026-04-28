@@ -77,4 +77,22 @@ Combining multiple DSP feature extraction methods improved classification perfor
 4. Run all cells
 
 ## AI Assistance
-ChatGPT was used to assist with debugging, explaining DSP concepts, improving documentation, and reviewing code structure. All coding, testing, and final analysis were completed by the team.
+
+ChatGPT was used only for permitted tasks such as:
+
+- Debugging syntax errors
+- Improving README documentation
+- Assisting with code organization
+- Explaining general programming concepts
+- Helping format visualizations
+
+All core DSP implementations including:
+- STFT implementation
+- Wavelet transform implementation
+- Feature extraction logic
+- Classification models
+- Result analysis
+
+were designed, implemented, tested, and understood entirely by the team.
+
+All AI-assisted suggestions were reviewed, modified when necessary, and verified by the team before use.
