@@ -12,14 +12,20 @@ The project includes:
 - Classification using machine learning models
 - Performance comparison
 
+---
+
 ## Team Members
 - Sadeem Alsahli
 - Jumana Alarfaji
 - Rana Baagag
 - Lena Almuhaizie
 
+---
+
 ## Dataset
 We used the Free Spoken Digit Dataset (FSDD), which contains audio recordings of spoken digits from 0 to 9.
+
+---
 
 ## Methodology
 1. Load dataset
@@ -29,37 +35,56 @@ We used the Free Spoken Digit Dataset (FSDD), which contains audio recordings of
 5. Extract DFT features
 6. Extract STFT features
 7. Extract wavelet features
-8. Train machine learning models
-9. Compare performance
+8. Compare feature extraction methods
+9. Train machine learning models
+10. Compare model performance
+
+---
 
 ## Features Extracted
 
-### Time Domain
+### Time Domain Features
 - Energy
-- RMS
+- RMS Energy
 - Zero Crossing Rate
-- Signal Duration
+- Envelope Mean
+- Autocorrelation Peak
 
 ### DFT Features
-- Spectral Centroid
-- Spectral Bandwidth
-- Dominant Frequency
+- Peak Frequency
 - Spectral Energy
+- Spectral Centroid
+- Bandwidth
+- Spectral Rolloff
+- Spectral Flatness
 
 ### STFT Features
 - Mean STFT Energy
 - STFT Variance
+- Energy Change
+- STFT Spectral Centroid
+- STFT Bandwidth
 
 ### Wavelet Features
 - Wavelet Energy
 - Wavelet Entropy
+- Statistical coefficients
 
-## Models Used
-- KNN
-- SVM
-- Logistic Regression
+---
 
-## Results
+## Feature Set Comparison (Using SVM)
+
+| Feature Set | Accuracy |
+|------------|------------|
+| All Features | 82.67% |
+| DFT | 61.17% |
+| Wavelet | 52.17% |
+| STFT | 50.83% |
+| Time-domain | 39.67% |
+
+---
+
+## Model Comparison
 
 | Model | Accuracy |
 |--------|------------|
@@ -67,32 +92,35 @@ We used the Free Spoken Digit Dataset (FSDD), which contains audio recordings of
 | Logistic Regression | 79.50% |
 | KNN | 77.17% |
 
-## Conclusion
-Combining multiple DSP feature extraction methods improved classification performance. SVM achieved the highest accuracy.
+---
+
+## Final Result
+The best performance was achieved by combining all extracted features and using an SVM classifier.
+
+Final Accuracy: **82.67%**
+
+---
 
 ## How to Run
-1. Download FSDD dataset
-2. Open notebook in Google Colab or Jupyter
+1. Download the FSDD dataset
+2. Open the notebook in Google Colab or Jupyter Notebook
 3. Install required libraries
-4. Run all cells
+4. Run all cells sequentially
+
+---
+
+## Required Libraries
+- numpy
+- pandas
+- matplotlib
+- librosa
+- scikit-learn
+- pywavelets
+- scipy
+
+---
 
 ## AI Assistance
+ChatGPT was used only for permitted tasks such as debugging syntax issues, improving documentation, explaining programming concepts, and formatting visualizations.
 
-ChatGPT was used only for permitted tasks such as:
-
-- Debugging syntax errors
-- Improving README documentation
-- Assisting with code organization
-- Explaining general programming concepts
-- Helping format visualizations
-
-All core DSP implementations including:
-- STFT implementation
-- Wavelet transform implementation
-- Feature extraction logic
-- Classification models
-- Result analysis
-
-were designed, implemented, tested, and understood entirely by the team.
-
-All AI-assisted suggestions were reviewed, modified when necessary, and verified by the team before use.
+All core DSP implementations, feature extraction methods, classification logic, and final analysis were completed, tested, and verified by the team.
